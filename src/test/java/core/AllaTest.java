@@ -8,79 +8,50 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.omg.Messaging.SyncScopeHelper;
 
 public class AllaTest {
 
 	@BeforeClass
-	public static void BeforeClass() {
-		System.out.println("BeforeClass method is being executed before the very first test starts");
-	}
+	public static void BeforeClass() throws Exception {}
 	
 	@AfterClass
-	public static void AfterClass() {
-		System.out.println("AFterClass method is being executed after the very last test");
-	}
+	public static void AfterClass() throws Exception {}
 	
 	@Before
-	public void Before() {
-		System.out.println("Before method is being executed before EACH test");
-	}
+	public void Before() throws Exception {}
 	
 	@After
-	public void After() {
-		System.out.println("After method is being executed after each test");
-	}
+	public void After() throws Exception {}
 	
 	@Test
-	public void Test_01_assertEquals_Positive() {
-		System.out.println("Test_01-assertEquals_Positive");
-	}
+	public void Test_01_assertEquals_Positive() {assertEquals("Strings are different", "Koshka_Mashka", Alla.str);}
 	
 	@Test
-	public void Test_02_assertEquals_Negative() {
-		System.out.println("Test_02_assertEquals_Negative");
-	}
+	public void Test_02_assertEquals_Negative() {assertEquals("Strings are different", "Kot Filya", Alla.str);}
 	
 	@Ignore
 	@Test
-	public void Test_03_assertEquals_Ignored() {
-		System.out.println("Test_03_assertEquals_Ignored");
-	}
+	public void Test_03_assertEquals_Ignored() {assertEquals("Strings are different", "Koty i Koshki", Alla.str);}
 	
 	@Test
-	public void Test_04_assertSame_Positive(){
-		System.out.println("Test_04_assertSame_Positive");
-	}
+	public void Test_04_assertSame_Positive(){assertSame("Integer is wrong", 89, Alla.num);}
 	
 	@Test
-	public void Test_05_assertSame_Negative(){
-		System.out.println("Test_05_assertSame_Negative");
-	}
+	public void Test_05_assertSame_Negative(){assertSame("Integer is wrong", 98, Alla.num);}
 	
 	@Ignore
 	@Test
-	public void Test_06_assertSame_Ignored() {
-		System.out.println("Test_06_assertSame_Ignored");
-	}
+	public void Test_06_assertSame_Ignored() {assertSame("Integer is wrong", 157, Alla.num);}
 	
 	@Test
-	public void Test_07_assertFalse_Positive() {
-		System.out.println("Test_07_assertFalse_Positive");
-	}
+	public void Test_07_assertFalse_Positive() {assertFalse("Boolean should be false", Alla.fl);}
 
 	@Test
-	public void Test_08_assertFalse_Negative() {
-		System.out.println("Test_08_assertFalse_Negative");
-	}
+	public void Test_08_assertFalse_Negative() {assertFalse("Boolean should be false", Alla.tr);}
 	
 	@Test
-	public void Test_09_assertTrue_Positive() {
-		System.out.println("Test_09_assertTrue_Positive");
-	}
+	public void Test_09_assertTrue_Positive() {assertTrue("Boolean should be true", Alla.tr);}
 	
 	@Test
-	public void Test_10_assertTrue_Negative() {
-		System.out.println("Test_10_assertTrue_Negative");
-	}
+	public void Test_10_assertTrue_Negative() {assertTrue("Boolean should be true", Alla.fl);}
 }
